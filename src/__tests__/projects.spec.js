@@ -22,29 +22,29 @@ describe("Projects", () => {
     });
   });
 
-  // it("should be able to list the projects", async () => {
-  //   const repository = await request(app)
-  //     .post("/repositories")
-  //     .send({
-  //       url: "https://github.com/Rocketseat/umbriel",
-  //       title: "Umbriel",
-  //       techs: ["Node", "Express", "TypeScript"]
-  //     });
+  it("should be able to list the projects", async () => {
+    const repository = await request(app)
+      .post("/repositories")
+      .send({
+        url: "https://github.com/Rocketseat/umbriel",
+        title: "Umbriel",
+        techs: ["Node", "Express", "TypeScript"],
+      });
 
-  //   const response = await request(app).get("/repositories");
+    const response = await request(app).get("/repositories");
 
-  //   expect(response.body).toEqual(
-  //     expect.arrayContaining([
-  //       {
-  //         id: repository.body.id,
-  //         url: "https://github.com/Rocketseat/umbriel",
-  //         title: "Umbriel",
-  //         techs: ["Node", "Express", "TypeScript"],
-  //         likes: 0
-  //       }
-  //     ])
-  //   );
-  // });
+    expect(response.body).toEqual(
+      expect.arrayContaining([
+        {
+          id: repository.body.id,
+          url: "https://github.com/Rocketseat/umbriel",
+          title: "Umbriel",
+          techs: ["Node", "Express", "TypeScript"],
+          likes: 0,
+        },
+      ])
+    );
+  });
 
   // it("should be able to update repository", async () => {
   //   const repository = await request(app)
