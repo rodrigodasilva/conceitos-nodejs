@@ -46,31 +46,31 @@ describe("Projects", () => {
     );
   });
 
-  // it("should be able to update repository", async () => {
-  //   const repository = await request(app)
-  //     .post("/repositories")
-  //     .send({
-  //       url: "https://github.com/Rocketseat/umbriel",
-  //       title: "Umbriel",
-  //       techs: ["Node", "Express", "TypeScript"]
-  //     });
+  it("should be able to update repository", async () => {
+    const repository = await request(app)
+      .post("/repositories")
+      .send({
+        url: "https://github.com/Rocketseat/umbriel",
+        title: "Umbriel",
+        techs: ["Node", "Express", "TypeScript"],
+      });
 
-  //   const response = await request(app)
-  //     .put(`/repositories/${repository.body.id}`)
-  //     .send({
-  //       url: "https://github.com/Rocketseat/unform",
-  //       title: "Unform",
-  //       techs: ["React", "ReactNative", "TypeScript", "ContextApi"]
-  //     });
+    const response = await request(app)
+      .put(`/repositories/${repository.body.id}`)
+      .send({
+        url: "https://github.com/Rocketseat/unform",
+        title: "Unform",
+        techs: ["React", "ReactNative", "TypeScript", "ContextApi"],
+      });
 
-  //   expect(isUuid(response.body.id)).toBe(true);
+    expect(isUuid(response.body.id)).toBe(true);
 
-  //   expect(response.body).toMatchObject({
-  //     url: "https://github.com/Rocketseat/unform",
-  //     title: "Unform",
-  //     techs: ["React", "ReactNative", "TypeScript", "ContextApi"]
-  //   });
-  // });
+    expect(response.body).toMatchObject({
+      url: "https://github.com/Rocketseat/unform",
+      title: "Unform",
+      techs: ["React", "ReactNative", "TypeScript", "ContextApi"],
+    });
+  });
 
   // it("should not be able to update a repository that does not exist", async () => {
   //   await request(app)
