@@ -37,7 +37,7 @@ This project uses these technologies:
 
 - Install the dependencies: `yarn`
 - Run the server: `yarn dev`
-- Run the tests: `yarn tests`
+- Run the tests: `yarn test`
 
 ## 🤔 How can I help?
 
